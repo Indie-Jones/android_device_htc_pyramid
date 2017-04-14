@@ -13,7 +13,7 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE_TAGS := optional
 
-LOCAL_MODULE := gps.pyramid
+LOCAL_MODULE := gps.villec2
 
 LOCAL_MODULE_TAGS := optional
 

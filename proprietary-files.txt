@@ -93,7 +93,7 @@ lib/libqmiservices.so
 lib/libqmi.so
 
 # Sensors
-lib/hw/sensors.pyramid.so
+lib/hw/sensors.villec2.so
 lib/libmllite.so
 lib/libmlplatform.so
 lib/libmpl_jni.so

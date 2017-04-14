@@ -24,7 +24,7 @@
 # variant, so that it gets overwritten by the parent (which goes
 # against the traditional rules of inheritance).
 
-TARGET_SPECIFIC_HEADER_PATH += device/htc/pyramid/include
+TARGET_SPECIFIC_HEADER_PATH += device/htc/villec2/include
 
 BOARD_VENDOR := htc
 
@@ -72,7 +72,7 @@ TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 QCOM_FM_ENABLED := true
 
 # GPS
-TARGET_GPS_HAL_PATH := device/htc/pyramid/gps
+TARGET_GPS_HAL_PATH := device/htc/villec2/gps
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
 
 
@@ -94,21 +94,21 @@ TARGET_POWERHAL_VARIANT := qcom
 TARGET_PROVIDES_LIBLIGHT := true
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := pyramid
+TARGET_BOOTLOADER_BOARD_NAME := villec2
 
 # Kernel
 BOARD_KERNEL_BASE := 0x48000000
 BOARD_KERNEL_PAGE_SIZE := 2048
-BOARD_KERNEL_CMDLINE := console=none androidboot.hardware=pyramid no_console_suspend=1 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := console=none androidboot.hardware=villec2 no_console_suspend=1 androidboot.selinux=permissive
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01400000
-TARGET_KERNEL_CONFIG := pyramid_defconfig
-TARGET_KERNEL_SOURCE := kernel/htc/pyramid
+TARGET_KERNEL_CONFIG := villec2_defconfig
+TARGET_KERNEL_SOURCE := kernel/htc/villec2
 
 RECOVERY_FSTAB_VERSION := 2
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
-TARGET_RECOVERY_DEVICE_DIRS += device/htc/pyramid
-TARGET_RECOVERY_FSTAB := device/htc/pyramid/rootdir/etc/fstab.pyramid
+TARGET_RECOVERY_DEVICE_DIRS += device/htc/villec2
+TARGET_RECOVERY_FSTAB := device/htc/villec2/rootdir/etc/fstab.villec2
 
 # Charge mode
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
@@ -117,19 +117,19 @@ BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
 TARGET_HAS_NO_BLUE_LED := true
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/pyramid/bluetooth/include
-BOARD_CUSTOM_BT_CONFIG := device/htc/pyramid/bluetooth/vnd_pyramid.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/villec2/bluetooth/include
+BOARD_CUSTOM_BT_CONFIG := device/htc/villec2/bluetooth/vnd_villec2.txt
 BOARD_BLUETOOTH_USES_HCIATTACH_PROPERTY := false
 
 # Bluetooth/Wifi
--include device/htc/pyramid/bcmdhd.mk
+-include device/htc/villec2/bcmdhd.mk
 
 # Hardware tunables
-#BOARD_HARDWARE_CLASS := device/htc/pyramid/cmhw
+#BOARD_HARDWARE_CLASS := device/htc/villec2/cmhw
 
 # RIL
 TARGET_RIL_VARIANT := caf
-BOARD_RIL_CLASS := ../../../device/htc/pyramid/ril
+BOARD_RIL_CLASS := ../../../device/htc/villec2/ril
 
 # Misc
 BOARD_USES_LEGACY_MMAP := true
@@ -143,7 +143,7 @@ TARGET_RECOVERY_DEVICE_MODULES += chargeled
 -include device/qcom/sepolicy/sepolicy.mk
 
 BOARD_SEPOLICY_DIRS += \
-    device/htc/pyramid/sepolicy
+    device/htc/villec2/sepolicy
 
 # Filesystem
 TARGET_USERIMAGES_USE_EXT4 := true

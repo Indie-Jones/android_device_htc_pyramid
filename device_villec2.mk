@@ -18,7 +18,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Qualcomm scripts
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/prebuilt/init.qcom.efs.sync.sh:system/etc/init.qcom.efs.sync.sh
+    device/htc/villec2/prebuilt/init.qcom.efs.sync.sh:system/etc/init.qcom.efs.sync.sh
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -42,7 +42,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
 
 # System properties
--include device/htc/pyramid/system_prop.mk
+-include device/htc/villec2/system_prop.mk
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -57,7 +57,7 @@ PRODUCT_PACKAGES += \
 
 # Thermal
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/configs/thermald.conf:system/etc/thermald.conf
+    device/htc/villec2/configs/thermald.conf:system/etc/thermald.conf
 
 # GPS
 PRODUCT_COPY_FILES += \
@@ -148,8 +148,8 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
-    device/htc/pyramid/configs/media_codecs.xml:system/etc/media_codecs.xml \
-    device/htc/pyramid/configs/media_profiles.xml:system/etc/media_profiles.xml
+    device/htc/villec2/configs/media_codecs.xml:system/etc/media_codecs.xml \
+    device/htc/villec2/configs/media_profiles.xml:system/etc/media_profiles.xml
 
 
 # Device uses high-density artwork where available
@@ -167,16 +167,16 @@ WITH_CM_CHARGER := false
 PRODUCT_PACKAGES += \
     camera.msm8660
 
-DEVICE_PACKAGE_OVERLAYS += device/htc/pyramid/overlay
+DEVICE_PACKAGE_OVERLAYS += device/htc/villec2/overlay
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    fstab.pyramid \
-    init.pyramid.rc \
+    fstab.villec2 \
+    init.villec2.rc \
     init.qcom.power.rc \
-    init.pyramid.usb.rc \
-    ueventd.pyramid.rc \
-    gps.pyramid
+    init.villec2.usb.rc \
+    ueventd.villec2.rc \
+    gps.villec2
 
 
 # Wifi
@@ -184,66 +184,66 @@ $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329
 
 # Keylayouts and Key Character Maps
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/keylayout/pmic8xxx_pwrkey.kl:system/usr/keylayout/pmic8xxx_pwrkey.kl \
-    device/htc/pyramid/keylayout/cy8c-touchscreen.kl:system/usr/keylayout/cy8c-touchscreen.kl \
-    device/htc/pyramid/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
-    device/htc/pyramid/keylayout/keypad_8660.kl:system/usr/keylayout/keypad_8660.kl \
-    device/htc/pyramid/keylayout/pmic8xxx_pwrkey.kcm:system/usr/keychars/pmic8xxx_pwrkey.kcm \
-    device/htc/pyramid/keylayout/h2w_headset.kcm:system/usr/keychars/h2w_headset.kcm \
-    device/htc/pyramid/keylayout/keypad_8660.kcm:system/usr/keychars/keypad_8660.kcm
+    device/htc/villec2/keylayout/pmic8xxx_pwrkey.kl:system/usr/keylayout/pmic8xxx_pwrkey.kl \
+    device/htc/villec2/keylayout/cy8c-touchscreen.kl:system/usr/keylayout/cy8c-touchscreen.kl \
+    device/htc/villec2/keylayout/h2w_headset.kl:system/usr/keylayout/h2w_headset.kl \
+    device/htc/villec2/keylayout/keypad_8660.kl:system/usr/keylayout/keypad_8660.kl \
+    device/htc/villec2/keylayout/pmic8xxx_pwrkey.kcm:system/usr/keychars/pmic8xxx_pwrkey.kcm \
+    device/htc/villec2/keylayout/h2w_headset.kcm:system/usr/keychars/h2w_headset.kcm \
+    device/htc/villec2/keylayout/keypad_8660.kcm:system/usr/keychars/keypad_8660.kcm
 
 # Input device config
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/idc/cy8c-touchscreen.idc:system/usr/idc/cy8c-touchscreen.idc \
-    device/htc/pyramid/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc
+    device/htc/villec2/idc/cy8c-touchscreen.idc:system/usr/idc/cy8c-touchscreen.idc \
+    device/htc/villec2/idc/synaptics-rmi-touchscreen.idc:system/usr/idc/synaptics-rmi-touchscreen.idc
 
 # HTC BT Audio tune
-PRODUCT_COPY_FILES += device/htc/pyramid/dsp/AudioBTID.csv:system/etc/AudioBTID.csv
+PRODUCT_COPY_FILES += device/htc/villec2/dsp/AudioBTID.csv:system/etc/AudioBTID.csv
 
 # Sound configs
 PRODUCT_COPY_FILES += \
-    device/htc/pyramid/dsp/AdieHWCodec.csv:system/etc/AdieHWCodec.csv \
-    device/htc/pyramid/dsp/AIC3254_REG.csv:system/etc/AIC3254_REG.csv \
-    device/htc/pyramid/dsp/AIC3254_REG_DualMic.csv:system/etc/AIC3254_REG_DualMic.csv \
-    device/htc/pyramid/dsp/CodecDSPID.txt:system/etc/CodecDSPID.txt \
-    device/htc/pyramid/dsp/CodecDSPID_WB.txt:system/etc/CodecDSPID_WB.txt \
-    device/htc/pyramid/dsp/TPA2051_CFG.csv:system/etc/TPA2051_CFG.csv \
-    device/htc/pyramid/dsp/TPA2051_CFG_XC.csv:system/etc/TPA2051_CFG_XC.csv \
-    device/htc/pyramid/dsp/soundimage/Sound_MFG.txt:system/etc/soundimage/Sound_MFG.txt \
-    device/htc/pyramid/dsp/soundimage/Sound_Original_Recording.txt:system/etc/soundimage/Sound_Original_Recording.txt \
-    device/htc/pyramid/dsp/soundimage/Sound_Original_SPK.txt:system/etc/soundimage/Sound_Original_SPK.txt \
-    device/htc/pyramid/dsp/soundimage/Sound_Original.txt:system/etc/soundimage/Sound_Original.txt \
-    device/htc/pyramid/dsp/soundimage/Sound_Phone_Original_HP_LE.txt:system/etc/soundimage/Sound_Phone_Original_HP_LE.txt \
-    device/htc/pyramid/dsp/soundimage/Sound_Phone_Original_HP.txt:system/etc/soundimage/Sound_Phone_Original_HP.txt \
-    device/htc/pyramid/dsp/soundimage/Sound_Phone_Original_HP_WB_LE.txt:system/etc/soundimage/Sound_Phone_Original_HP_WB_LE.txt \
-    device/htc/pyramid/dsp/soundimage/Sound_Phone_Original_HP_WB.txt:system/etc/soundimage/Sound_Phone_Original_HP_WB.txt \
-    device/htc/pyramid/dsp/soundimage/Sound_Phone_Original_REC_NEL.txt:system/etc/soundimage/Sound_Phone_Original_REC_NEL.txt \
-    device/htc/pyramid/dsp/soundimage/Sound_Phone_Original_REC.txt:system/etc/soundimage/Sound_Phone_Original_REC.txt \
-    device/htc/pyramid/dsp/soundimage/Sound_Phone_Original_REC_WB.txt:system/etc/soundimage/Sound_Phone_Original_REC_WB.txt \
-    device/htc/pyramid/dsp/soundimage/Sound_Phone_Original_SPK.txt:system/etc/soundimage/Sound_Phone_Original_SPK.txt \
-    device/htc/pyramid/dsp/soundimage/Sound_Phone_Original_SPK_WB.txt:system/etc/soundimage/Sound_Phone_Original_SPK_WB.txt \
-    device/htc/pyramid/dsp/soundimage/Sound_Rec_Landscape.txt:system/etc/soundimage/Sound_Rec_Landscape.txt \
-    device/htc/pyramid/dsp/soundimage/Sound_Recording.txt:system/etc/soundimage/Sound_Recording.txt \
-    device/htc/pyramid/dsp/soundimage/Sound_Beats.txt:system/etc/soundimage/Sound_Beats.txt \
-    device/htc/pyramid/dsp/soundimage/Sound_Rec_Portrait.txt:system/etc/soundimage/Sound_Rec_Portrait.txt
+    device/htc/villec2/dsp/AdieHWCodec.csv:system/etc/AdieHWCodec.csv \
+    device/htc/villec2/dsp/AIC3254_REG.csv:system/etc/AIC3254_REG.csv \
+    device/htc/villec2/dsp/AIC3254_REG_DualMic.csv:system/etc/AIC3254_REG_DualMic.csv \
+    device/htc/villec2/dsp/CodecDSPID.txt:system/etc/CodecDSPID.txt \
+    device/htc/villec2/dsp/CodecDSPID_WB.txt:system/etc/CodecDSPID_WB.txt \
+    device/htc/villec2/dsp/TPA2051_CFG.csv:system/etc/TPA2051_CFG.csv \
+    device/htc/villec2/dsp/TPA2051_CFG_XC.csv:system/etc/TPA2051_CFG_XC.csv \
+    device/htc/villec2/dsp/soundimage/Sound_MFG.txt:system/etc/soundimage/Sound_MFG.txt \
+    device/htc/villec2/dsp/soundimage/Sound_Original_Recording.txt:system/etc/soundimage/Sound_Original_Recording.txt \
+    device/htc/villec2/dsp/soundimage/Sound_Original_SPK.txt:system/etc/soundimage/Sound_Original_SPK.txt \
+    device/htc/villec2/dsp/soundimage/Sound_Original.txt:system/etc/soundimage/Sound_Original.txt \
+    device/htc/villec2/dsp/soundimage/Sound_Phone_Original_HP_LE.txt:system/etc/soundimage/Sound_Phone_Original_HP_LE.txt \
+    device/htc/villec2/dsp/soundimage/Sound_Phone_Original_HP.txt:system/etc/soundimage/Sound_Phone_Original_HP.txt \
+    device/htc/villec2/dsp/soundimage/Sound_Phone_Original_HP_WB_LE.txt:system/etc/soundimage/Sound_Phone_Original_HP_WB_LE.txt \
+    device/htc/villec2/dsp/soundimage/Sound_Phone_Original_HP_WB.txt:system/etc/soundimage/Sound_Phone_Original_HP_WB.txt \
+    device/htc/villec2/dsp/soundimage/Sound_Phone_Original_REC_NEL.txt:system/etc/soundimage/Sound_Phone_Original_REC_NEL.txt \
+    device/htc/villec2/dsp/soundimage/Sound_Phone_Original_REC.txt:system/etc/soundimage/Sound_Phone_Original_REC.txt \
+    device/htc/villec2/dsp/soundimage/Sound_Phone_Original_REC_WB.txt:system/etc/soundimage/Sound_Phone_Original_REC_WB.txt \
+    device/htc/villec2/dsp/soundimage/Sound_Phone_Original_SPK.txt:system/etc/soundimage/Sound_Phone_Original_SPK.txt \
+    device/htc/villec2/dsp/soundimage/Sound_Phone_Original_SPK_WB.txt:system/etc/soundimage/Sound_Phone_Original_SPK_WB.txt \
+    device/htc/villec2/dsp/soundimage/Sound_Rec_Landscape.txt:system/etc/soundimage/Sound_Rec_Landscape.txt \
+    device/htc/villec2/dsp/soundimage/Sound_Recording.txt:system/etc/soundimage/Sound_Recording.txt \
+    device/htc/villec2/dsp/soundimage/Sound_Beats.txt:system/etc/soundimage/Sound_Beats.txt \
+    device/htc/villec2/dsp/soundimage/Sound_Rec_Portrait.txt:system/etc/soundimage/Sound_Rec_Portrait.txt
 
 # Bluetooth firmware
-$(call inherit-product, device/htc/pyramid/bcm_hcd.mk)
+$(call inherit-product, device/htc/villec2/bcm_hcd.mk)
 
 # call the proprietary setup
-$(call inherit-product-if-exists, vendor/htc/pyramid/pyramid-vendor.mk)
+$(call inherit-product-if-exists, vendor/htc/villec2/villec2-vendor.mk)
 
 # media profiles and capabilities spec
-$(call inherit-product, device/htc/pyramid/media_a1026.mk)
+$(call inherit-product, device/htc/villec2/media_a1026.mk)
 
 ## htc audio settings
-$(call inherit-product, device/htc/pyramid/media_htcaudio.mk)
+$(call inherit-product, device/htc/villec2/media_htcaudio.mk)
 
 $(call inherit-product, frameworks/native/build/phone-hdpi-512-dalvik-heap.mk)
 
 # Discard inherited values and use our own instead.
-PRODUCT_DEVICE := pyramid
-PRODUCT_NAME := pyramid
+PRODUCT_DEVICE := villec2
+PRODUCT_NAME := villec2
 PRODUCT_BRAND := htc
 PRODUCT_MODEL := Sensation
 PRODUCT_MANUFACTURER := HTC

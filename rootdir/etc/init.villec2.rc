@@ -1,4 +1,4 @@
-import init.pyramid.usb.rc
+import init.villec2.usb.rc
 import init.qcom.power.rc
 
 on early-init
@@ -22,8 +22,8 @@ on fs
     mkdir /firmware_radio 0771 system system
     mkdir /firmware_q6 0771 system system
     # mount all mmc partitions
-    mount_all /fstab.pyramid
-    swapon_all /fstab.pyramid
+    mount_all /fstab.villec2
+    swapon_all /fstab.villec2
 
     mkdir /data/tombstones 0771 system system
     symlink /data/tombstones /tombstones
@@ -42,7 +42,7 @@ on fs
    # link widevine drm library path
     symlink /system/vendor/lib /vendor/lib
 
-    mount_all /remount.pyramid
+    mount_all /remount.villec2
 
 on post-fs
     # Support legacy paths
